@@ -17,7 +17,7 @@ def conn_product():
   connection.row_factory =sqlite3.Row
   db_price = connection.execute('SELECT * FROM prezzi').fetchall()
   connection.close()
-  return render_template('product.html', prezzi = db_price, articolo = 'Campagnole Biscotti con Farina di Riso 700g', marca = 'Mulino Bianco')
+  return render_template('product.html', prezzi = db_price, articolo = 'Campagnole Biscotti con Farina di Riso 700g', marca = 'Mulino Bianco', test = [1.1,2.4,5,4,5,6,7.9])
 
 if __name__ == '__main__':
   app.run(host='0.0.0.0', debug=True)
