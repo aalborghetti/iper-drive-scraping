@@ -1,17 +1,9 @@
-drop table if exists price;
+drop table if exists prezzi;
 
-create table price (
-  id integer primary key autoincrement,
+create table prezzi (
+  ID INTEGER PRIMARY KEY AUTOINCREMENT,
+  data text,
   articolo text,
-  prezzo integer
-);
-
-insert into price (articolo,prezzo) values (
-  'Campagnole',
-  3
-);
-
-insert into price (articolo,prezzo) values (
-  'Biscottone',
-  4
+  marca text,
+  prezzo float
 );
