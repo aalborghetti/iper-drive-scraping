@@ -5,5 +5,5 @@ create table products (
   code text,
   product text,
   brand text,
-  link text
+  url text
 );

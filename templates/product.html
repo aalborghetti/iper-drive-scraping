@@ -3,14 +3,22 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{title}}</title>
+    <title>{{articolo}}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   </head>
   <body>
-    
+    <nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <i class="bi-cart4"></i>
+      Monitoraggio prezzi
+    </a>
+  </div>
+</nav>
     <div  class="container">
-      <h1>{{articolo}}</h1>
-      <h2>{{marca}}</h2>
+      <h1>{{product}}</h1>
+      <h2>{{brand}}</h2>
     </div>
     
     <div class="container">
@@ -23,11 +31,11 @@
       const ctx = document.getElementById('myChart');
   
       const data = {
-        labels: [{% for item in prezzi %}
-          '{{item.data}}',
+        labels: [{% for item in prices %}
+          '{{item.date}}',
         {% endfor %}],
         datasets: [{
-          data: [{% for item in prezzi %}        {{'%0.2f'|format(item.prezzo|float)}},
+          data: [{% for item in prices %}        {{'%0.2f'|format(item.price|float)}},
         {% endfor %}],
           borderColor: 'rgb(60,50,200)',
           tension: 0.2
